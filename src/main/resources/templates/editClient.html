@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="template1">
+<head>
+  <meta charset="UTF-8">
+  <title>Modifier client</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div layout:fragment="content1">
+  <div class="col-md-6 offset-3">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <form class="row g-3" method="post" th:action="@{save(page=${page}, motCle=${motCle})}">
+      <div >
+        <label>ID</label>
+        <label th:text="${client.id}"></label>
+        <input id="id" class="form-control" type="text" name="id" th:value="${client.id}">
+      </div>
+      <div class="col-md-6">
+        <label>Nom</label>
+        <input class="form-control" type="text" name="nom" th:value="${client.nom}">
+        <span class="text-danger" th:errors="${client.nom}"></span>
+      </div>
+      <div class="col-md-6">
+        <label>Prénom</label>
+        <input class="form-control " type="text" name="prenom" th:value="${client.prenom}">
+        <span class="text-danger" th:errors="${client.prenom}"></span>
+      </div>
+      <div class="col-md-6">
+        <label>Username</label>
+        <input class="form-control " type="text" name="username" th:value="${client.username}">
+        <span class="text-danger" th:errors="${client.username}"></span>
+      </div>
+
+      <div class="col-md-6">
+        <label>E-mail</label>
+        <input class="form-control" type="text" name="email" th:value="${client.email}">
+        <span class="text-danger" th:errors="${client.email}"></span>
+      </div>
+      <button type="submit" class="btn btn-outline-secondary">mettre à jour</button>
+    </form>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</body>
+</html>
